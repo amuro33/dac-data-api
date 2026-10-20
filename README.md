@@ -10,10 +10,15 @@ MES API Platform 2027 — Data Workflow · Playground.
 빌드 없이 정적 파일(`web/`)만 서빙하면 됩니다.
 
 ```
-npm start                              # http://localhost:3000  (npx serve 사용)
+node server.js            # http://localhost:3000  (Node.js만 있으면 됨, 설치할 패키지 없음)
 # 또는
-python3 -m http.server 3000 --directory web
+npm start                 # 위와 같음
+# 또는
+python -m http.server 3000 --directory web
 ```
+
+사내망처럼 패키지를 받을 수 없는 환경에서도 `node server.js`는 그대로 동작합니다.
+서버 없이 `web/index.html`을 더블클릭해서 열어도 됩니다.
 
 - `web/index.html` : 화면 목록
 - `web/assets/styles.css` : 모든 화면의 스타일 (자동 추출)
