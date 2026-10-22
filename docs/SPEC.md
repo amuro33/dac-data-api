@@ -121,7 +121,7 @@ Data API 하나(SQL 하나)로는 부족하므로 **서로 다른 Data API 여�
 - 두 카드를 세로로 쌓고 각각 체크로 켜고 끈다. 켠 카드 안에 해당 설정이 펼쳐진다.
 
 ### 5.2 API 배포
-- **호출 경로: `POST /api/workflow/{api_id}`**. 기존 Data API 경로(`/api/dac/select/{api_id}`)와 겹치지 않게 별도 경로를 쓴다. [확정]
+- **호출 경로: `POST /api/workflow/execute/{api_id}`**. 기존 Data API 경로(`/api/dac/select/{api_id}`)와 겹치지 않게 별도 경로를 쓴다. [확정]
 - 배포 시 **OpenAPI 3.1 명세를 자동 생성**하고 Swagger UI를 제공한다(사내망 공개). [확정]
 - 설정 항목: api_id, 워크스페이스, 인증(사내 토큰), Swagger UI 공개, 타임아웃, 호출 제한. [항목은 제안, 값은 예시: 30s, 60회/분]
 - 호출 라우팅은 우리 쪽 자체 라우팅 방식을 쓴다(별도 게이트웨이 제품 없음). [확정]

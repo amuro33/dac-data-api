@@ -19,7 +19,7 @@ const openapi = [
 '  title: Lot 수율 · 공정 이력 분석',
 '  version: 1.0.0',
 'paths:',
-'  /api/workflow/lot_yield_equip:',
+'  /api/workflow/execute/lot_yield_equip:',
 '    post:',
 '      operationId: runLotYieldEquip',
 '      requestBody:',
@@ -93,7 +93,7 @@ mcpCheck: mcp ? '#4f46e5' : '#ffffff',
 mcpMark: mcp ? 1 : 0,
 apiFields: [
 { label: 'api_id', value: 'lot_yield_equip' },
-{ label: '호출 경로', value: '/api/workflow/lot_yield_equip' },
+{ label: '호출 경로', value: '/api/workflow/execute/lot_yield_equip' },
 { label: '메서드', value: 'POST' },
 { label: '워크스페이스', value: 'MFG Analytics' }
 ],

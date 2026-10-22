@@ -17,7 +17,7 @@
     if (state.tab === 'warn' && w.status !== 'warn') return false;
     var q = state.q.trim().toLowerCase();
     if (!q) return true;
-    return (w.id + ' ' + w.desc + ' ' + w.tool + ' /api/workflow/' + w.id).toLowerCase().indexOf(q) >= 0;
+    return (w.id + ' ' + w.desc + ' ' + w.tool + ' /api/workflow/execute/' + w.id).toLowerCase().indexOf(q) >= 0;
   }
   function fmt(n) { return n == null ? '—' : n.toLocaleString('en-US'); }
 
@@ -63,7 +63,7 @@
     if (w.mcp) chips.push(h('span', { class: 'chip mono accent', text: 'MCP' }));
     if (w.job) chips.push(h('span', { class: 'chip mono warn', text: 'Job' }));
     if (!chips.length) chips.push(h('span', { class: 'hint', style: 'font-size:12px', text: '미배포' }));
-    var a1 = w.api ? '/api/workflow/' + w.id : (w.tool || '—');
+    var a1 = w.api ? '/api/workflow/execute/' + w.id : (w.tool || '—');
     var a2 = w.api && w.tool ? w.tool : '';
     return h('a', { class: 'grid trow' + (w.status === 'draft' && w.id === 'lot_yield_equip' ? ' cur' : ''), href: 'editor.html' }, [
       h('div', { class: 'name-cell' }, [

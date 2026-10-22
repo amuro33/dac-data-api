@@ -106,7 +106,7 @@
     if (d.type === 'DAC') return dacPanel(sel);
     if (d.type === 'START') return header('START', 'background:#eef2ff;color:#4338ca', '입력 노드', '요청 body로 받는 값') + '<div class="c3l">' +
       section('입력 파라미터', '<span class="c3p">' + d.params.length + '개</span>', d.params.map(function (p) { return '<div class="c4a"><div class="c4b"><div class="c4c">' + p[0] + '</div><div class="c2y">' + p[1] + ' · 필수</div></div><span class="c4e">body</span></div>'; }).join('')) +
-      section('호출 예시', '', '<pre class="c49">POST /api/workflow/lot_yield_equip\n{\n  "lot_id": "LOT-1199",\n  "wafer_id": "ALL",\n  "start_time": "2026-10-19T14:00",\n  "end_time": "2026-10-20T14:00"\n}</pre>') + '</div>';
+      section('호출 예시', '', '<pre class="c49">POST /api/workflow/execute/lot_yield_equip\n{\n  "lot_id": "LOT-1199",\n  "wafer_id": "ALL",\n  "start_time": "2026-10-19T14:00",\n  "end_time": "2026-10-20T14:00"\n}</pre>') + '</div>';
     if (d.type === 'JOIN') return header('JOIN', DUCK, 'DuckDB JOIN', '두 노드의 결과를 합칩니다') + '<div class="c3l">' +
       section('조인 방식', '', pills(['INNER', 'LEFT', 'RIGHT', 'FULL'], d.kind, 'kind')) +
       section('조인 키', '', '<div class="c4a"><div class="c4b"><div class="c4c">' + nodes.dac1.api + '</div><div class="c2y">왼쪽</div></div><span class="c4d">' + d.key + '</span></div><div class="c4a"><div class="c4b"><div class="c4c">' + nodes.dac2.api + '</div><div class="c2y">오른쪽</div></div><span class="c4d">' + d.key + '</span></div>') +
